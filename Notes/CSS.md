@@ -28,11 +28,13 @@ This will apply the color white to all div elements
 ### Class Selectors
 Selects all elements with the given class, which is just an attribute you place on an HTML element
 
+‘‘‘
 <div class="alert-text">Please agree to our terms of service.</div>
 
 .alert-text {
   color: red;
 }
+‘‘‘
 
 You can add multiple classes to a single element in a space-separated list like
 class="alert-text severe-alert"
