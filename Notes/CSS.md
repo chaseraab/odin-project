@@ -101,3 +101,114 @@ This selector will be applied to any element which has both the subsection and h
     This is where a preview for a post might go.
   </p>
 </div>
+
+.subsection.header {
+  color: red;
+}
+
+.subsection#preview {
+  color: blue;
+}
+This can also be done with IDs as shown above
+You cannot chain two different types of selectors (ex div and p)
+
+## Descendant Combinator
+Combinators allow us to combine multiple selectors differently than either grouping or chaining them as they show a relationship between the selectors
+
+Descendant combinators only cause elements that match the last selector to be selected if they also have an ancestor (parent) that matches the previous selector
+
+<div class="ancestor">
+  <!-- A -->
+  <div class="contents">
+    <!-- B -->
+    <div class="contents"><!-- C --></div>
+  </div>
+</div>
+
+<div class="contents"><!-- D --></div>
+
+.ancestor .contents {
+  /* some declarations */
+}
+
+Only the content classes which are inside the ancestor class will be selected
+
+## Properties
+
+* color - sets the text color
+* background-color - sets the background color of the element
+
+Example of property values
+
+p {
+  /* hex example: */
+  color: #1100ff;
+}
+
+p {
+  /* rgb example: */
+  color: rgb(100, 0, 127);
+}
+
+p {
+  /* hsl example: */
+  color: hsl(15, 82%, 56%);
+}
+
+[CSS Legal Color Values](https://www.w3schools.com/cssref/css_colors_legal.php)
+
+* font-family - single value or comma separated list of values that determine what font an element uses
+  * A list of values should often be used in the event the browser cannot find the font specified
+  * ex: font-family: "Times New Roman", serif;
+
+* font-size - size of the font
+  * ex: font-size: 22px
+
+* font-weight - affects the boldness of text
+  * ex: font-weight: bold
+
+* text-align - will elight text horizontally within an element
+  * ex: text-align: center
+
+* image heigh and width
+  * We can set height or width to auto to keep it scalable with the other property
+
+img {
+  height: auto;
+  width: 500px;
+}
+
+## Adding CSS to HTML
+
+### External CSS
+Create a separate file and linking it inside of an HTML's opening and closing <head> tags with a void <link> element
+
+<!-- index.html -->
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+/* styles.css */
+div {
+  color: white;
+  background-color: black;
+}
+
+p {
+  color: red;
+}
+
+### Internal CSS
+AKA embedded CSS
+Adds CSS within the HTML file itself instead of creating a completely separate file. All rules are placed within <style> elements inside of the <head> element
+
+Useful for making a single page different
+
+### Inline CSS
+Adds styles directly to HTML elements but isn't recommended
+
+<body>
+  <div style="color: white; background-color: black;">...</div>
+</body>
+
+Does not use selectors
