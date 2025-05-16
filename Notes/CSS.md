@@ -244,6 +244,7 @@ Example:
   <div class="list subsection">Red text</div>
 </div>
 ```
+
 ```
 /* rule 1 */
 .subsection {
@@ -265,6 +266,7 @@ The div element will end up having red text since rule 2 will be applied. It wil
   <div class="list" id="subsection">Blue text</div>
 </div>
 ```
+
 ```
 /* rule 1 */
 #subsection {
@@ -286,6 +288,7 @@ In this case rule 1 will be applied since the ID takes precedence over the class
   <div class="list" id="subsection">Red text on yellow background</div>
 </div>
 ```
+
 ```
 #subsection {
   background-color: yellow;
