@@ -212,3 +212,82 @@ Adds styles directly to HTML elements but isn't recommended
 </body>
 
 Does not use selectors
+
+## The Cascade of CSS
+Browsers have default styles which can explain unaccounted for or unintentional results on our webpages.
+
+The 'cascade' is what determines which rules actually get applied to our HTML. There are different factors that the cascade uses to determine this. 
+
+### Specify
+A CSS declaration that is more specific will take precedence over less specific ones. Inline styles have the highest specificity compared to selectors while each type of selector has its own specificity level that contributes to how specific a declaration is.
+
+** Hierarchy of cascade **
+1. ID selectors (most specific selector)
+2. Class selectors
+3. Type selectors
+4. Anything else
+
+Example:
+
+```
+<!-- index.html -->
+
+<div class="main">
+  <div class="list subsection">Red text</div>
+</div>
+```
+```
+/* rule 1 */
+.subsection {
+  color: blue;
+}
+
+/* rule 2 */
+.main .list {
+  color: red;
+}
+```
+
+The div element will end up having red text since rule 2 will be applied. It will be applied as the presence of multiple classes makes it more specific.
+
+```
+<!-- index.html -->
+
+<div class="main">
+  <div class="list" id="subsection">Blue text</div>
+</div>
+```
+```
+/* rule 1 */
+#subsection {
+  color: blue;
+}
+
+/* rule 2 */
+.main .list {
+  color: red;
+}
+```
+
+In this case rule 1 will be applied since the ID takes precedence over the class.
+
+```
+<!-- index.html -->
+
+<div class="main">
+  <div class="list" id="subsection">Red text on yellow background</div>
+</div>
+```
+```
+#subsection {
+  background-color: yellow;
+  color: blue;
+}
+
+/* rule 2 */
+.main #subsection {
+ color: red;
+}
+```
+
+The red text gets applied since rule 2 contains an ID selector as well as a class selector which makes it more specific.
