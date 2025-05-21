@@ -302,3 +302,69 @@ In this case rule 1 will be applied since the ID takes precedence over the class
 ```
 
 The red text gets applied since rule 2 contains an ID selector as well as a class selector which makes it more specific.
+
+```
+/* rule 1 */
+.class.second-class {
+  font-size: 12px;
+}
+
+/* rule 2 */
+.class .second-class {
+  font-size: 24px;
+}
+```
+Both rules have the same specificty.
+
+```
+/* rule 1 */
+.class.second-class {
+  font-size: 12px;
+}
+
+/* rule 2 */
+.class > .second-class {
+  font-size: 24px;
+}
+```
+Both rules have the same specificity. The '>' does not add to the specificity.
+
+### Inheritance
+CSS properties which are inherited by an elements descendants. Targetting an element directly will always override inheritance. 
+
+```
+<!-- index.html -->
+
+<div id="parent">
+  <div class="child"></div>
+</div>
+```
+
+```
+/* styles.css */
+
+#parent {
+  color: red;
+}
+
+.child {
+  color: blue;
+}
+```
+The child element will have the color blue since its being specifically targetted. Red from the parent is inherited.
+
+### Rule Order
+When there are 'ties' or conflicts, the last defined rule will be applied.
+
+```
+/* styles.css */
+
+.alert {
+  color: red;
+}
+
+.warning {
+  color: yellow;
+}
+```
+If an element has both alert and warning classes, the warning class will be applied since it was defined after the alert class.
