@@ -368,3 +368,17 @@ When there are 'ties' or conflicts, the last defined rule will be applied.
 }
 ```
 If an element has both alert and warning classes, the warning class will be applied since it was defined after the alert class.
+
+## Inspecting CSS and HTML
+
+### Inspector
+You can right-click any element of a webpage and click "Inspect" or press F12
+
+### Inspecting Elements
+Elements panel shows the HTML breakdown of the current page
+When an element is selected, the styles tab will show the styles applied to the selected element.
+
+### Testing styles in the inspector
+The Styles panel allows you to edit styles directly in the browser. This is helpful for testing out certain styles without editing the source code.
+
+## The Box Model
