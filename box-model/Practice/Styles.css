@@ -1,0 +1,18 @@
+.background {
+    background-color: white;
+}
+.box-1 {
+    box-sizing: content-box;
+    width: 700px;
+    height: 300px;
+
+    padding: 50px;
+}
+
+.box-2 {
+    box-sizing: border-box;
+    width: 700px;
+    height: 300px;
+
+    padding: 50px;
+}

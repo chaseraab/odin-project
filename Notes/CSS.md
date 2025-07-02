@@ -382,3 +382,52 @@ When an element is selected, the styles tab will show the styles applied to the 
 The Styles panel allows you to edit styles directly in the browser. This is helpful for testing out certain styles without editing the source code.
 
 ## The Box Model
+Being able to place elements in the correct location is the most important part of web design.
+Every single thing on a webpage is a rectangular box. These boxes can have other boxes in them and can sit alongside one another.
+You can get an idea of the boundaries of the rectangles by using the following selector:
+```
+* {
+  outline: 2px solid red;
+}
+```
+How to manipulate the boxes:
+* padding: increases the space between the border of a box and the content of the box
+* border: adds space between the margin and the padding
+* margin: increases the space between the borders of a box and the borders of adjacent boxes
+  * Separates items from each other
+
+## Learn CSS Box Model in 8 Minutes Video
+https://www.youtube.com/watch?v=rIO5326FgPE&ab_channel=WebDevSimplified
+
+One of the best ways to alter the size of your box is through padding.
+Using the inspector in chrome you can see the padding, border and margin of elements
+box-sizing
+- Defines how the size of an element is determined
+- Setting to border-box means that an elements size as set by height and width will include padding and border.
+Margin is not included in the size of an element
+
+## box-sizing: border-box video
+https://www.youtube.com/watch?v=HdZHcFWcAd8
+
+box-sizing options
+- border-box
+  - Set size includes border and padding
+- content-box
+  - Padding and border get added to the set size
+
+Typically border-box is used because its easier to estimate the size of the element
+
+## MDN - The Box Model
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model
+
+### Block and inline boxes
+Block boxes and inline boxes
+- The type refers to how the box behaves in terms of page flow and in relation to other boxes on the page
+Boxes have an inner display type and an outer display type
+Display types can be set using the [display](https://developer.mozilla.org/en-US/docs/Web/CSS/display) property
+Block display value:
+  - The box will not break onto a new line
+  - The width and height properties are respected
+  - Padding, margin and border will cause other elements to be pushed away from the box
+  - If width is not specified, the box will extend in the inline direction to fill the pace available in its container. 
+  - HTML elements such as ```<p>``` and ```<h1>``` use block as default
