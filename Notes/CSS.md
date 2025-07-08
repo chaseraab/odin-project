@@ -406,7 +406,7 @@ box-sizing
 - Setting to border-box means that an elements size as set by height and width will include padding and border.
 Margin is not included in the size of an element
 
-## box-sizing: border-box video
+### box-sizing: border-box video
 https://www.youtube.com/watch?v=HdZHcFWcAd8
 
 box-sizing options
@@ -417,10 +417,12 @@ box-sizing options
 
 Typically border-box is used because its easier to estimate the size of the element
 
-## MDN - The Box Model
+### MDN - The Box Model
 https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model
 
-### Block and inline boxes
+## Block and inline boxes
+https://www.theodinproject.com/lessons/foundations-block-and-inline
+
 Block boxes and inline boxes
 - The type refers to how the box behaves in terms of page flow and in relation to other boxes on the page
 Boxes have an inner display type and an outer display type
@@ -431,3 +433,54 @@ Block display value:
   - Padding, margin and border will cause other elements to be pushed away from the box
   - If width is not specified, the box will extend in the inline direction to fill the pace available in its container. 
   - HTML elements such as ```<p>``` and ```<h1>``` use block as default
+
+### Block vs inline
+Most of the elements I've learned about thus far as block elements
+- ```display: block```
+- Elements will appear on the page stacked ontop of one another
+
+Inline elements on the other hand, will exist within the line which they are placed
+- Ex: ```<a>```
+  - Links will appear in the middle of the paragraph in which they are defined
+- Padding and margin behave differently on inline elements. Typically you want to put extra padding or margin on inline elements.
+
+Inline-block elements behave like inline elements with block padding and margin
+- ```display: inline-block```
+
+### Divs and Spans
+Div and Span elements allow us to position elements correctly on a page
+
+Div is a block-level element
+- Used as a container to group other elements
+- Allows us to divide the page into blocks and apply styling to blocks
+
+```
+<div class="introduction">
+   <h2>Introduction</h2>
+</div>
+
+<div class="main-content">
+   <h2>Main Content</h2>
+</div>
+
+<div class="contact-us">
+   <h2>Contact Us</h2>
+</div>
+```
+
+Span is an inline-level element by default.
+- Groups text content and inline HTML
+
+```
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+  minim veniam, <span class="highlight">quis nostrud <a href="https://www.dictionary.com/browse/exercitation">exercitation</a>
+  ullamco laboris</span> nisi ut aliquip ex ea commodo consequat.   
+</p>
+```
+
+### Additional Resources
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Introduction
+https://www.w3schools.com/html/html_blocks.asp
+https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
