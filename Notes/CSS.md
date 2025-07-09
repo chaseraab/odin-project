@@ -484,3 +484,17 @@ Span is an inline-level element by default.
 https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Introduction
 https://www.w3schools.com/html/html_blocks.asp
 https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
+
+## Flexbox
+https://www.theodinproject.com/lessons/foundations-introduction-to-flexbox
+
+[History of flexbox](https://medium.com/@BennyOgidan/history-of-css-grid-and-css-flexbox-658ae6cfe6d2)
+
+The use of browser developer tools are crucial for learning about flexbox.
+
+Flexbox is a way to arrange items into rows or columns. These items will flex based on rules you can define.
+
+flexbox/example_1.html
+- Uncommenting the commented out flex elements changes the elements from being displayed vertically to horizontally
+  display: flex;
+  flex: 1; 
