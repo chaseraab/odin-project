@@ -521,10 +521,69 @@ A flex container
 - Any item which has a child
 - The positioning of the child elements is determined by the container
 
-#### Grouping flex items
+##### Grouping flex items
 Flex containers only position their items (i.e one level deep). They don't have any visibility into their grandchildren.
 
-#### Cross Axis (Vertical) Alignment
+##### Cross Axis (Vertical) Alignment
 Just as justify-content aligns items horizontally, align-items aligns then vertically
 
-#### Wrapping Flex Items
+#### Learn Flexbox CSS in 8 minutes
+https://www.youtube.com/watch?v=phWxA89Dy94
+
+## Growing and Shrinking
+https://www.theodinproject.com/lessons/foundations-growing-and-shrinking
+
+### The flex shorthand
+the flex declaration is actually shorthand for 3 properties
+* flex-grow
+* flex-shrink
+* flex-basis
+
+```flex: 1``` is equal to saying:
+```flex-grow: 1```
+```flex-shrink: 1```
+```flex-basis: 0```
+flex is often defined with only one value which means its only applying to flex-grow. So ```flex: 1``` is shorthand for ```flex: 1 1 0```
+
+### Flex-grow
+single number as its vlaue
+"Grow this amount for each div inside our container"
+
+In example_3.html you can see that the second container is twice the size as containers 1 and 3.
+
+### Flex-shrink
+similar to flex-grow but sets the shrink factor.This is only applied if the size of all flex items is larger then their parent container.
+
+In example_4.html if you resize the window you can see that items 1 and 3 resize around item 2.
+
+### Flex-basis
+Sets the initial size of a flex item so any growing or shrinking starts from that baseline size.
+
+Use ```flex-shrink: auto``` to check for an items set width, otherwise it will be ignored.
+
+### Flex auto
+When auto is defined as a flex keyword its the equivalent of setting 
+```flex-grow: 1```
+```flex-shrink: 1```
+```flex-basis: auto```
+
+### Additional resources:
+https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+
+## Axes
+https://www.theodinproject.com/lessons/foundations-axes
+
+How can items within a flex-container be controlled using a ```flex-direction``` property.
+
+### Axes
+default direction of a container is horizontal (row) but you can change the direction to veritcal (column). This is specified via ```flex-direction: column```
+
+There are two axis, the main axis and the cross axis.
+
+Flex-basis will refer to height instead of width when flex-direction is set to column.
+
+### Additional Resources
+Flexbox visual cheat sheet: https://flexbox.malven.co/
+
+## Alignment
+
