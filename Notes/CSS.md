@@ -498,3 +498,33 @@ flexbox/example_1.html
 - Uncommenting the commented out flex elements changes the elements from being displayed vertically to horizontally
   display: flex;
   flex: 1; 
+
+Resizing the window makes the elements 'flex' or stretch and squash with the size of the window.
+
+### Flex containers and flex items
+A flex continer is any element that has a ```display: flex``` attribute. 
+A flex item is any element that lives directly inside of a flex container. 
+Any item can be both a flex container and a flex item. 
+An item can be granted ```display: flex``` which allows its children to be handled in a flex box.
+
+### Additional Resources
+#### Interneting is hard
+https://internetingishard.netlify.app/html-and-css/flexbox/index.html
+
+flex containers group a bunch of flex items together and define how they're positioned
+Any element which is a direct child of a flex container is an "item".
+
+```justify-content: center```
+- This will center the content (horizontal position)
+
+A flex container
+- Any item which has a child
+- The positioning of the child elements is determined by the container
+
+#### Grouping flex items
+Flex containers only position their items (i.e one level deep). They don't have any visibility into their grandchildren.
+
+#### Cross Axis (Vertical) Alignment
+Just as justify-content aligns items horizontally, align-items aligns then vertically
+
+#### Wrapping Flex Items
