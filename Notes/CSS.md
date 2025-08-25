@@ -586,4 +586,13 @@ Flex-basis will refer to height instead of width when flex-direction is set to c
 Flexbox visual cheat sheet: https://flexbox.malven.co/
 
 ## Alignment
+https://www.theodinproject.com/lessons/foundations-alignment
 
+The flex: 1 parameter will make all items stetch to occupy the entire space. If we want the objects to retain their original size and have negative space in between to occupy the space we can use ```justify-content: space-between```
+
+```justify-content``` aligns items across the main axis.
+```align-items``` and ```justify-content``` will always position items across differing axises. So if flex-direction is set to column, ```justify-content``` will align items vertically and ```align-items``` horizontally.
+
+### Gap
+
+Gap adds a gap between items of a specified length
