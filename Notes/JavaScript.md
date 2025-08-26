@@ -93,3 +93,152 @@ alert( `the result is ${1 + 2}` ); // the result is 3
 ```
     - The expression inside `${...}` is evaluated and the result becomes part of the string
 
+In JavaScript null means: nothing, empty or unknown instead of non-existent
+
+Undefined means "value is not assigned"
+
+### Strings
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Strings
+
+#### Concatenation
+JavaScript/string-button.html
+- window.prompt() function prompts the user to answer a question via a popup dialog box
+
+You can use + for concatenation
+
+```
+const greeting = "Hello";
+const name = "Chris";
+console.log(greeting + ", " + name); // "Hello, Chris"
+```
+
+Template literals are more readable however
+
+```
+const greeting = "Hello";
+const name = "Chris";
+console.log(`${greeting}, ${name}`); // "Hello, Chris"
+```
+
+#### Multiline strings
+
+```
+const newline = `One day you finally knew
+what you had to do, and began,`;
+console.log(newline);
+
+/*
+One day you finally knew
+what you had to do, and began,
+*/
+```
+
+#### Numbers vs Strings
+
+```
+const name = "Front ";
+const number = 242;
+console.log(name + number); // "Front 242"
+```
+The browser understands that the number should be treated like a string in this situation
+
+The Number() function will convert a passed value into a number
+The String() function will convert a passed value into a string
+
+https://www.w3schools.com/js/js_string_methods.asp
+
+### Conditionals
+
+https://javascript.info/comparison
+https://javascript.info/logical-operators
+https://www.w3schools.com/js/js_if_else.asp
+
+#### Single line conditions
+
+```
+let result = condition ? value1 : value2;
+```
+
+Conditions can be chained together:
+
+```
+let age = prompt('age?', 18);
+
+let message = (age < 3) ? 'Hi, baby!' :
+  (age < 18) ? 'Hello!' :
+  (age < 100) ? 'Greetings!' :
+  'What an unusual age!';
+
+```
+
+The `?` can be a replacement for `if`
+
+```
+<!DOCTYPE html>
+<script>
+"use strict";
+
+let company = prompt('Which company created JavaScript?', '');
+
+(company == 'Netscape') ?
+   alert('Right!') : alert('Wrong.');
+</script>
+```
+#### Switch Statement
+
+https://javascript.info/switch
+
+```
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}
+```
+
+```
+let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert( 'Too small' );
+    break;
+  case 4:
+    alert( 'Exactly!' );
+    break;
+  case 5:
+    alert( 'Too big' );
+    break;
+  default:
+    alert( "I don't know such values" );
+}
+```
+
+Cases can be bundled together if they desire the same result for multiple conditions
+
+```
+let a = 3;
+
+switch (a) {
+  case 4:
+    alert('Right!');
+    break;
+
+  case 3: // (*) grouped two cases
+  case 5:
+    alert('Wrong!');
+    alert("Why don't you take a math class?");
+    break;
+
+  default:
+    alert('The result is strange. Really.');
+}
+```
