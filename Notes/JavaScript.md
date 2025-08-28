@@ -242,3 +242,129 @@ switch (a) {
     alert('The result is strange. Really.');
 }
 ```
+
+require() imports code from another file
+
+### Recap questions:
+What are the eight data types in JavaScript?
+1. Number
+2. bigInt
+3. string
+4. boolean
+5. null
+6. undefined
+7. symbol
+8. object
+
+Which data type is not primitive?
+Objects. A primitive type can only store a single value but objects are more complex than that.
+
+What is the relationship between null and undefined?
+undefined - a value is not assigned
+null - empty or unknown
+
+Whats the difference between single, double and backtick quotes for string?
+Single and double quotes accomplish the same thing but always need to be used in conjunction with themselves. Backticks is used for string resolution.
+
+What is the term for joining strings together?
+Concatenation
+
+Which type of quote lets you embed variables/ expressions in a string?
+Backticks
+
+How do you use escape characters in a string?
+use a \ in conjunction withh the quote
+```const bigmouth = 'I\'ve got no right to take my place…';```
+
+What is the difference between the slice and substring methods?
+slice extracts part of a string and returns the extracted part
+Substring is different in that the second argument is the length of the string and not the position
+
+What are the three logical operators?
+|| - or
+&& - and
+! - not
+
+## JavaScript Developer Tools
+https://www.theodinproject.com/lessons/foundations-javascript-developer-tools
+
+### DOM
+https://developer.chrome.com/docs/devtools/dom/
+
+Document object model
+HTML initial page contents
+DOM current page contents
+
+### Device Mode
+https://developer.chrome.com/docs/devtools/device-mode/
+
+Icon at the top of the inspect window
+
+### Debugging JavaScript
+
+https://developer.chrome.com/docs/devtools/javascript/
+
+The sources panel (in the inspector) is where you debug javascript
+You can perform typical debugging actions from this area. It might be best to rewatch this video the first time you use it.
+
+### Supplemental content
+https://www.youtube.com/watch?v=xkzDaKwinA8
+
+## Function Basics
+https://www.theodinproject.com/lessons/foundations-function-basics
+
+Example of a JS function:
+
+```
+function favoriteAnimal(animal) {
+    return animal + " is my favorite animal!"
+}
+
+console.log(favoriteAnimal('Goat'))
+```
+
+### Function Expressions
+https://javascript.info/function-expressions
+
+This is a very good article and is worth re-reading
+
+```
+let sayHi = function() {
+  alert( "Hello" );
+};
+```
+
+- A function expression is when the function declaration is on the right side of the assignment expression
+- Does not require the function to be named
+
+Anonymous functions have no name
+
+```
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+```
+The two functions being declared inside the ask arguments are anonymous.
+
+### JavaScript Call Stack
+
+A call stack is a way for the JavaScript engine to keep track of its place in code that calls multiple functions. It has information on what function is being run and what functions are invoked from within that function.
+- Also used to manage execution contexts
+- LIFO (Last in first out)
+
+The call stack will add whatever function call its currently working on to the top of the stack, this way the most recently called function will always be at the top of the stack. Once the call to that function complets, its poped off the stack and the next function call is executed.
+
+A stack overflow is an error which occurs when the number of function calls exceeds the space provided by the stack.
+
+### Docs on JS functions
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions
+https://javascript.info/function-expressions
+https://www.javascripttutorial.net/javascript-call-stack/
+
