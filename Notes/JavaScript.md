@@ -368,3 +368,12 @@ https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Fu
 https://javascript.info/function-expressions
 https://www.javascripttutorial.net/javascript-call-stack/
 
+## Problem Solving
+https://www.theodinproject.com/lessons/foundations-problem-solving
+
+Approaching problems:
+- Understand the problem
+- Plan
+- Pseudocode
+- Divide and conquer
+
