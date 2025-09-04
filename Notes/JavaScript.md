@@ -377,3 +377,79 @@ Approaching problems:
 - Pseudocode
 - Divide and conquer
 
+Its worth looking into the "How to Think Like a Programmer" videos in this lesson
+
+## Understanding Errors
+https://www.theodinproject.com/lessons/foundations-understanding-errors
+
+## Clean Code
+https://www.theodinproject.com/lessons/foundations-clean-code
+
+## Loops and arrays
+https://www.theodinproject.com/lessons/foundations-loops-and-arrays
+
+### Loops
+Loops are incredibly similar to java
+
+### Arrays
+Arrays are incredibly similar to python lists
+
+arrays are declared with []
+``` const a = [] ```
+``` const a = ['a', 'b'] ```
+
+elements can be accessed by index
+``` a[1] ```
+
+Add an element to an array:
+```a.push("E");```
+
+### Maps
+Maps are callback functions applied to arrays
+
+```
+function addOne(num) {
+  return num + 1;
+}
+const arr = [1, 2, 3, 4, 5];
+const mappedArr = arr.map(addOne);
+console.log(mappedArr); // Outputs [2, 3, 4, 5, 6]
+```
+
+Maps will not alter the original data structure
+Maps can accept inline functions as such:
+
+```
+const arr = [1, 2, 3, 4, 5];
+const mappedArr = arr.map((num) => num + 1);
+console.log(mappedArr); // Outputs [2, 3, 4, 5, 6]
+```
+
+### Filters
+Filters are similar to maps but only return values that are returned true by the callback
+
+```
+function isOdd(num) {
+  return num % 2 !== 0;
+}
+const arr = [1, 2, 3, 4, 5];
+const oddNums = arr.filter(isOdd);
+console.log(oddNums); // Outputs [1, 3, 5];
+console.log(arr); // Outputs [1, 2, 3, 4, 5], original array is not affected
+```
+
+### Reduce
+Returns a single value which is the result of an operation performed on the entire array
+
+Example: finding the product of all numbers in an array:
+```
+const arr = [1, 2, 3, 4, 5];
+const productOfAllNums = arr.reduce((total, currentItem) => {
+  return total * currentItem;
+}, 1);
+console.log(productOfAllNums); // Outputs 120;
+console.log(arr); // Outputs [1, 2, 3, 4, 5]
+```
+A callback function is passed ``` (total, currentItem) => {return total * currentItem} ```
+A starting value for total is also passed ``` 1 ```
+
