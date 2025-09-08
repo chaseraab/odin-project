@@ -453,3 +453,72 @@ console.log(arr); // Outputs [1, 2, 3, 4, 5]
 A callback function is passed ``` (total, currentItem) => {return total * currentItem} ```
 A starting value for total is also passed ``` 1 ```
 
+## DOM Manipulation and Events
+https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events
+
+### Document Object Model (DOM)
+A tree-like representation of the contents of a webpage - a tree of "nodes"
+
+```
+<div id="container">
+  <div class="display"></div>
+  <div class="controls"></div>
+</div>
+```
+Conatiner is the parent to display and controls. Display and controls are siblings to one another.
+
+Here are a number of ways of targetting "display" 
+```
+div.display
+.display
+#container > .display
+div#container > div.display
+```
+
+```
+// selects the #container div (don't worry about the syntax, we'll get there)
+const container = document.querySelector("#container");
+
+// selects the first child of #container => .display
+const display = container.firstElementChild;
+console.log(display);  // <div class="display"></div>
+```
+
+### DOM Methods
+When your HTML code is parsed by a web browser it is converted to the DOM. The nodes are JS objects.
+
+#### Query Selectors
+element.querySelector(selector) - returns a reference to the first match of selector
+element.querySelectorAll(selectors) - returns a nodeList containing references to all of the mathing selectors
+
+#### Element Creation
+document.createElement(tagName, [options]) - creates an element of tag type tagName
+
+```const div = document.createElement("div");```
+The function does not put the element into the DOM but stores it in memory.
+
+#### Append Elements
+```parentNode.appendChild(childNode)``` - appends childNode as the last child of parentNode
+```parentNode.insertBefore(newNode, referenceNode)``` - inserts newNode into parentNode before referenceNode
+
+#### Remove Elements
+```parentNode.removeChild(child)``` - removes child from parentNode on the DOM and returns a reference to child
+
+#### Adding inline style
+You can alter the existing styles on a page
+div.style.color = "blue";
+
+#### Editing Attributes
+```div.setAttribute("id", "theDiv")```
+You can also getAttribute and removeAttribute
+
+Javascript will not alter the RAW HTML but instead alters the DOM
+
+To defer the running of your js file you can do the following:
+```
+<head>
+  <script src="js-file.js" defer></script>
+</head>
+```
+This will defer the running of js-file.js until the entirety of the html file is generated.
+
