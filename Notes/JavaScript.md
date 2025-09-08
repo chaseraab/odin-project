@@ -522,3 +522,25 @@ To defer the running of your js file you can do the following:
 ```
 This will defer the running of js-file.js until the entirety of the html file is generated.
 
+### Events
+Events are actions that occur on your webpage, sich as mouse-clicks or key-presses
+
+Three ways to listen to events:
+1. Specify function attributes directly on your HTML elements
+2. Set properties in the form of ```on<eventType>``` such as ```onClick``` or ```onmousedown``` on the DOM nodes in your JS
+3. You can attach event listeners to the DOM nodes in your JS
+
+Event listeners are the preferred method
+
+The following will log information about the event to the console:
+
+```
+const btn3 = document.querySelector("#btn3");
+btn3.addEventListener("click", function (e) {console.log(e)});
+```
+
+### DOM Events
+https://www.w3schools.com/jsref/dom_obj_event.asp
+
+### Additional Resources
+https://www.javascripttutorial.net/javascript-dom/javascript-events/
