@@ -543,4 +543,150 @@ btn3.addEventListener("click", function (e) {console.log(e)});
 https://www.w3schools.com/jsref/dom_obj_event.asp
 
 ### Additional Resources
+
 https://www.javascripttutorial.net/javascript-dom/javascript-events/
+
+#### Event bubbling
+In a bubbling model, an event starts at the most specific element and then flows updward towards the least specific element.
+
+When you click a button the event occurs as such:
+button -> div w/ the id container -> body -> html -> document
+
+#### Event Capturing 
+In the event-capturing model an event starts at the least specific element and flow downward toward the most specific element
+
+document -> html -> body -> div -> button
+
+#### DOM Level 2 Event Flow
+3 phases
+1. Capturing phase - the event moves from the top of the page down
+2. Target phase - the event reached the element that was clicked
+3. Bubbling phase - the event moves back up the page toward the top
+
+So in the event of a button being clicked, the event flow is as follows:
+
+1. Capturing phase: document -> html -> body -> div -> button
+2. Target phase: button
+3. Bubbling phase: button -> div -> body -> html -> document
+
+the preventDefault() method prevents the default behavior of an event
+
+the stopPropagation() method immediately stops the flow of an event through the DOM tree but will not stop the browser's default behavior.
+
+Example:
+
+```
+let btn = document.querySelector('#btn');
+
+btn.addEventListener('click', function(event) {
+    console.log('The button was clicked!');
+    event.stopPropagation();
+});
+
+document.body.addEventListener('click',function(event) {
+    console.log('The body was clicked!');
+});
+```
+In the above example, only a single message is printed out as the document.body event is never reached.
+
+### Page Loading Events
+https://www.javascripttutorial.net/javascript-dom/javascript-page-load-events/
+
+When a page is opened the following events occur:
+DOMContentLoaded
+ - browser fully loads html
+ - DOM tree is built
+ - No external sources are loaded
+ - Nodes can be selected
+load
+ - Browser fully loads HTML and external resources (images and style sheets)
+
+When you leave a page the following events occur:
+beforeunload 
+ - fires before the page and resources are unloaded
+ - This event can be used to show a confirmation dialog to confim you want to leave the page
+    - This can prevent data loss in case the user is filling out a form
+unload
+ - fires when the page has completely unloaded
+ - Use this event to send analytic data or to clean up resources
+
+```
+document.addEventListener('DOMContentLoaded',() => {
+    // handle DOMContentLoaded event
+});
+
+document.addEventListener('load',() => {
+    // handle load event
+});
+
+document.addEventListener('beforeunload',() => {
+    // handle beforeunload event
+});
+
+document.addEventListener('unload',() => {
+    // handle unload event
+});
+```
+
+### Mouse Events
+https://www.javascripttutorial.net/javascript-dom/javascript-mouse-events/
+
+Mouse events fire when you use the mouse to interact with the elements on the page
+
+### Event Delegation
+https://www.javascripttutorial.net/javascript-dom/javascript-event-delegation/
+
+Reducing the amount of event handlers is imperative for the functionality of the page
+
+```
+    let menu = document.querySelector('#menu');
+
+    menu.addEventListener('click', (event) => {
+        let target = event.target;
+
+        switch(target.id) {
+            case 'home':
+                console.log('Home menu item was clicked');
+                break;
+            case 'dashboard':
+                console.log('Dashboard menu item was clicked');
+                break;
+            case 'report':
+                console.log('Report menu item was clicked');
+                break;
+        }
+    });
+```
+
+This code creates an event handler based on the id of the target selected
+
+### JavaScript dispatchEvent
+https://www.javascripttutorial.net/javascript-dom/javascript-dispatchevent/
+
+Events such as mouse clicks and key presses can be created programatically 
+
+```
+let clickEvent = new Event('click');
+```
+- create an event
+
+```
+element.dispatchEvent(event);
+```
+- dispatch an event
+
+An event contains an `isTrusted` attribute which will determine whether the event was dispatched from a user (true) or an automation (false)
+
+### JavaScript custom events
+https://www.javascripttutorial.net/javascript-dom/javascript-custom-events/
+
+to create a custom event use the CustomEvent() constructor
+
+`let event = new CustomEvent(eventType, options);`
+- eventType is a string which represents the name of the event
+- options is an object that has the detail property that contains any custom information about the event
+
+After its created it can be dispatched by attached it to a DOM trigger via dispatchEvent()
+
+### DOM Scripting
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting#active_learning_basic_dom_manipulation
