@@ -31,17 +31,34 @@
     </ul>
 
     <script>
-        // const list = document.querySelector("ul");
-        // const span = document.querySelector("span");
-
+        const list = document.querySelector("ul");
+        const input = document.getElementById("item");
         const button = document.querySelector("button");
+        input.focus()
 
-        function logInput() {
-          const input = document.getElementById("item");
-          console.log(input.value);
+        function addItem() {
+          const itemName = input.value;
+          input.value = "";
+          
+          const listItem = document.createElement("li");
+          const span = document.createElement("span");
+          const deleteButton = document.createElement("button");
+
+          listItem.appendChild(span);
+          listItem.appendChild(deleteButton);
+
+          span.textContent = itemName;
+          deleteButton.textContent = "Delete";
+
+          deleteButton.addEventListener("click", () => {
+            deleteButton.parentElement.remove();
+          }) 
+
+          list.append(listItem);
+          input.focus()
         }
 
-        button.addEventListener("click", logInput)
+        button.addEventListener("click", addItem)
     </script>
   </body>
 </html>
